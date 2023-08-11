@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  font-family: "Plus Jakarta Sans" !important;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar,
+.scroll::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #f8f5ff;
+  /* overflow-y: hidden; */
+  padding: 0;
+  margin: 0;
+}
+body::-webkit-scrollbar,
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.align {
+  width: 84vw;
+  margin-inline: auto;
+  max-width: 1440px;
+}
+
+.p-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.borders {
+  outline: "1px solid red";
+}
+
+.mantine-Input-input:focus {
+  outline: none !important;
+}
+
+.mantine-Input-input {
+  border: none !important;
+}
+
+.recharts-bar-rectangle {
+  clip-path: inset(0% 0% -11% 0% round 20px) !important;
+}
+.apx-legend-position-right {
+  justify-content: center !important;
+}
+.apexcharts-legend-marker {
+  border-radius: 0 !important;
+}
+
+thead,
+tr {
+  clip-path: inset(0% 0% -1% 0% round 10px) !important;
 }
