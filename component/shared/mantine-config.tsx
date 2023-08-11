@@ -10,15 +10,15 @@ import {
 import { useLocalStorage } from "@mantine/hooks";
 import React from "react";
 
-function MantineConfig({ children }: { children: React.ReactNode }) {
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: "mantine-color-scheme",
-    defaultValue: "light",
-    getInitialValueInEffect: true,
-  });
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+function MantineConfig({
+  children,
+  colorScheme,
+  toggleColorScheme,
+}: {
+  children: React.ReactNode;
+  colorScheme: ColorScheme;
+  toggleColorScheme: (value?: ColorScheme) => void;
+}) {
   return (
     <ColorSchemeProvider
       colorScheme={colorScheme}

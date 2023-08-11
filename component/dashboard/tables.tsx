@@ -85,7 +85,7 @@ function CustomersListTable() {
         <thead className="dark:text-white">
           <tr className="!rounded-[10px] ">
             {header.map((item, idx) => (
-              <th className="dark:text-white">{item}</th>
+              <th className="dark:text-white" key={idx}>{item}</th>
             ))}
           </tr>
         </thead>
