@@ -90,8 +90,8 @@ function CustomersListTable() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.name} className=" hover:!bg-[#F8F5FF]">
+          {data.map((item, idx) => (
+            <tr key={idx} className=" hover:!bg-[#F8F5FF]">
               <td>{item.name}</td>
               <td>{item.portfolio}</td>
               <td>{item.gender}</td>

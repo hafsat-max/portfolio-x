@@ -9,7 +9,7 @@ const LoginForm = () => {
         <Text size="md" variant="sonic-silver">
           Welcome to Portfoliox,
         </Text>
-        <Text size="bg">Sign in to your Dashboard</Text>
+        <Text size="bg" variant="black">Sign in to your Dashboard</Text>
         <Text size="md" variant="sonic-silver">
           Input your admin email and password.
         </Text>

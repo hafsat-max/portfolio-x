@@ -27,8 +27,8 @@ const EasyAccess = () => {
             </Box>
 
             <Flex direction='column' justify='space-between' gap='12px'>
-                <Text size={'lg'} variant="rich-black">{item.text}</Text>
-                <Text size={'base'} variant="electric-blue" className=" max-w-[450px]">{item.paragraph}</Text>
+                <Text size='lg' variant="rich-black">{item.text}</Text>
+                <Text size='base' variant="electric-blue" className=" max-w-[450px]">{item.paragraph}</Text>
             </Flex>
         </Flex>
       ))}

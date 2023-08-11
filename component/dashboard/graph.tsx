@@ -111,7 +111,7 @@ const Graph = () => {
           width={width}
           height={height}
           fill={color}
-          rx={`${topLeftRadius} ${topRightRadius}`} // Set separate radius for top left and top right corners
+          rx={10} // Set separate radius for top left and top right corners
           ry={0}
         />
       </g>

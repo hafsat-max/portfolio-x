@@ -31,9 +31,9 @@ const Form = () => {
 
   const fetchLogin = (value: IValues) => {
     axios
-      .post("https://web-production-9c5b.up.railway.app/api/account/login/", {
-        values,
-      })
+      .post("https://web-production-9c5b.up.railway.app/api/account/login/",
+        value,
+      )
       .then(function (response: { data: { token: any } }) {
         const token = JSON.parse(localStorage.getItem("my-user") as string);
 
@@ -55,7 +55,6 @@ const Form = () => {
   return (
     <form
       onSubmit={form.onSubmit((values) => {
-        console.log(values);
         fetchLogin(values);
       })}
     >

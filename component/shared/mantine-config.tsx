@@ -7,9 +7,13 @@ import {
   MantineProvider,
   MantineTheme,
 } from "@mantine/core";
-import { useLocalStorage } from "@mantine/hooks";
 import React from "react";
 
+const getColor = (theme: any, variant: string) => {
+  return typeof theme.other[variant] === "string"
+    ? theme.other[variant]
+    : theme.other[variant]?.[theme.colorScheme];
+};
 function MantineConfig({
   children,
   colorScheme,
@@ -32,6 +36,7 @@ function MantineConfig({
               light: "#A6ACB8",
               dark: "#FFFFFF",
             },
+
             black: "#000000",
 
             "cetacean-blue": {
@@ -44,7 +49,8 @@ function MantineConfig({
             "yellow-green": "#91C039",
             "rich-black": "#040815",
             "electric-blue": "#596780",
-            "sonic-silver": "#757575",
+
+            "sonic-silver": { light: "#757575", dark: "#FFFFFF" },
 
             arsenic: {
               light: "#191635",
@@ -65,7 +71,7 @@ function MantineConfig({
                     fontSize: "12px",
                     fontWeight: 500,
                     lineHeight: "16px",
-                    color: theme.other[variant as string] || "black",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 base: (theme, params, { variant }) => ({
@@ -74,7 +80,7 @@ function MantineConfig({
                     fontWeight: 600,
                     lineHeight: "24px",
                     letterSpacing: "-2%",
-                    color: theme.other[variant as string] || "black",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 smd: (theme, params, { variant }) => ({
@@ -82,9 +88,7 @@ function MantineConfig({
                     fontSize: "18px",
                     fontWeight: 500,
                     lineHeight: "1.6875rem",
-                    color:
-                      theme.other[variant as string][theme.colorScheme] ||
-                      "black",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 md: (theme, params, { variant }) => ({
@@ -93,7 +97,7 @@ function MantineConfig({
                     fontWeight: 600,
                     lineHeight: "30px",
                     letterSpacing: "-2%",
-                    color: theme.other[variant as string] || "black",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 lg: (theme, params, { variant }) => ({
@@ -101,9 +105,7 @@ function MantineConfig({
                     fontSize: "24px",
                     fontWeight: 800,
                     lineHeight: "normal",
-                    color:
-                      theme.other[variant as string][theme.colorScheme] ||
-                      "white",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 bg: (theme, params, { variant }) => ({
@@ -112,7 +114,7 @@ function MantineConfig({
                     fontWeight: 700,
                     letterSpacing: "-2px",
                     lineHeight: "52px",
-                    color: theme.other[variant as string] || "black",
+                    color: getColor(theme, variant as string),
                   },
                 }),
                 secondary: (theme) => ({
