@@ -27,14 +27,14 @@ const NavList = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <div className=" flex justify-between gap-8 items-center">
+    <div className=" flex justify-between gap-8 items-center max-[1000px]:hidden">
       {list.map((item, index) => (
         <Flex gap="4px" align="center" key={index}>
           <Text
             component={Link}
             href={item.url}
             size="smd"
-            // variant="metallic-silver"
+            variant="metallic-silver"
             onClick={() => setActive(index)}
           >
             {item.list}

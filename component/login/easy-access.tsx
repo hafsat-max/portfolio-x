@@ -19,17 +19,25 @@ const list = [
 ];
 const EasyAccess = () => {
   return (
-    <Flex direction='column' justify='space-between' gap='44px'>
+    <Flex direction="column" justify="space-between" gap="44px">
       {list.map((item, idx) => (
         <Flex key={idx} justify="space-between" align="start" gap="40px">
-            <Box className=" bg-violet p-3 rounded-xl">
-                {item.icon}
-            </Box>
+          <Box className=" bg-violet dark:bg-[#111c44] p-3 rounded-xl">
+            {item.icon}
+          </Box>
 
-            <Flex direction='column' justify='space-between' gap='12px'>
-                <Text size='lg' variant="rich-black">{item.text}</Text>
-                <Text size='base' variant="electric-blue" className=" max-w-[450px]">{item.paragraph}</Text>
-            </Flex>
+          <Flex direction="column" justify="space-between" gap="12px">
+            <Text size="lg" variant="black">
+              {item.text}
+            </Text>
+            <Text
+              size="base"
+              variant="electric-blue"
+              className=" max-w-[450px]"
+            >
+              {item.paragraph}
+            </Text>
+          </Flex>
         </Flex>
       ))}
     </Flex>

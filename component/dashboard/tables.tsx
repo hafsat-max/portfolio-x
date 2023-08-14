@@ -74,7 +74,7 @@ function CustomersListTable() {
   const test = "Active";
 
   return (
-    <div className="p-30 flex-1 flex flex-col rounded-[14px] px-2 dark:bg-[#111c44] pt-22 bg-white mx-30 w-full">
+    <div className="p-30 flex-1 flex flex-col rounded-[14px] px-8 dark:bg-[#111c44] pt-22 bg-white mx-30 w-full">
       <TableHeader />
       <Table
         highlightOnHover

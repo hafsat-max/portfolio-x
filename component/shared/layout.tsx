@@ -7,7 +7,7 @@ const Layout = (props: ComponentProps<"div">) => {
     <Flex h="100vh" direction="column" sx={{ overflow: "auto" }}>
       <Header />
 
-      <Box className="flex-1 grid  grid-cols-[260px_1fr] overflow-auto">
+      <Box className="flex-1 grid  grid-cols-[clamp(200px,16.25vw,260px)_1fr] overflow-auto max-[688px]:grid-cols-1">
         <Aside />
 
         <Box className="bg-[#F8F5FF] dark:bg-[#0B1437] p-5 flex flex-1 overflow-auto">

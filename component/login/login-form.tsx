@@ -4,7 +4,7 @@ import Form from "./form";
 
 const LoginForm = () => {
   return (
-    <Flex direction="column" justify="space-between" gap="2.5rem" className=" self-start">
+    <Flex direction="column" justify="space-between" gap="2.5rem" className=" self-start max-[975px]:justify-center ">
       <Flex direction="column" justify="space-between" gap="19px">
         <Text size="md" variant="sonic-silver">
           Welcome to Portfoliox,

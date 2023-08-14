@@ -6,7 +6,7 @@ import EasyAccess from "./easy-access";
 
 const LoginBanner = () => {
   return (
-    <main className=" flex flex-col justify-between gap-20">
+    <main className=" flex flex-1 flex-col justify-between gap-20 max-[975px]:hidden">
       <section className=" flex flex-col gap-12">
         <div
           className="flex justify-between gap-8 pt-10"

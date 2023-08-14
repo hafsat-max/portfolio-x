@@ -17,7 +17,6 @@ const Header = () => {
       <Flex
         justify="space-between"
         align="center"
-        // bg="white"
         py="22px"
         w="95%"
         mx="auto"
@@ -28,6 +27,7 @@ const Header = () => {
           <Input
             icon={<Search />}
             placeholder="Search by customer..."
+            className="max-[688px]:hidden"
             sx={{
               input: {
                 outline: "1px solid #CDCFD4",
@@ -61,6 +61,7 @@ const Header = () => {
 
             <Indicator
               color="red"
+              className="max-[688px]:hidden"
               processing
               styles={{
                 common: {

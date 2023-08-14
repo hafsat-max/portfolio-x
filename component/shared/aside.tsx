@@ -12,7 +12,7 @@ const Aside = () => {
     <Flex
       direction="column"
       justify="space-between"
-      className="bg-white dark:bg-[#111c44] pl-5 pt-5"
+      className="bg-white dark:bg-[#111c44] pl-5 pt-5 max-[688px]:hidden"
     >
       {/* top */}
       <Flex direction="column" justify="space-between" gap="40px">

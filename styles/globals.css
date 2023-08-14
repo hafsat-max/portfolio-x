@@ -25,10 +25,13 @@ body::-webkit-scrollbar,
 }
 
 .align {
-  width: 84vw;
+  width: 84vw;  
   margin-inline: auto;
   max-width: 1440px;
 }
+
+
+
 
 .p-fixed {
   position: fixed;

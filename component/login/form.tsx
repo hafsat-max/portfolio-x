@@ -42,7 +42,7 @@ const Form = () => {
           toast.success("You have successfully logged in", {
             autoClose: 2000,
           });
-          //   router.push("/homepage");
+            router.push("/dashboard");
         }
       })
       .catch((error) => {

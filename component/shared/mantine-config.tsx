@@ -37,20 +37,21 @@ function MantineConfig({
               dark: "#FFFFFF",
             },
 
-            black: "#000000",
+            black: { light: "#000000", dark: "#FFFFFF" },
 
             "cetacean-blue": {
               light: "#18014A",
               dark: "#ffffff",
             },
-            crayola: "#303540",
+            crayola: { light: "#303540", dark: "#FFFFFF" },
             primary: "#ffffff",
-            "pastel-blue": "#B3C0D3",
+            "pastel-blue": { light: "#B3C0D3", dark: "#FFFFFF" },
             "yellow-green": "#91C039",
-            "rich-black": "#040815",
+            "rich-black": { light: "#040815", dark: "#FFFFFF" },
             "electric-blue": "#596780",
 
             "sonic-silver": { light: "#757575", dark: "#FFFFFF" },
+            "blue-electric": { light: "#61677F", dark: "#FFFFFF" },
 
             arsenic: {
               light: "#191635",
@@ -85,7 +86,7 @@ function MantineConfig({
                 }),
                 smd: (theme, params, { variant }) => ({
                   root: {
-                    fontSize: "18px",
+                    fontSize: "clamp(16px,1.2vw,18px)",
                     fontWeight: 500,
                     lineHeight: "1.6875rem",
                     color: getColor(theme, variant as string),
