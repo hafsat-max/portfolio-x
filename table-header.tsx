@@ -62,10 +62,7 @@ const TableHeader = () => {
                 w={85}
                 align='center'
                 gap='10px'
-                classNames={{
-                  root: "!bg-white !px-1 !text-[12px] ",
-                  label: "flex",
-                }}
+                className="!bg-white !px-1 !text-[12px] "
                 styles={{
                   root: {
                     background: "#F8F5FF",
