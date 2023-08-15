@@ -4,16 +4,16 @@ import ApexCharts from "apexcharts";
 
 export default function PieCharts() {
   var options = {
+    chart: {
+      width: "100%",
+      height: "299px",
+      type: "donut",
+    },
     labels: ["Civil Service", "Service", "Trading", "IT"],
     series: [44, 55, 41, 17],
     dataLabels: {
       enabled: false,
       show: false,
-    },
-    chart: {
-      width: "100%",
-      height: "299px",
-      type: "donut",
     },
     plotOptions: {
       pie: {
