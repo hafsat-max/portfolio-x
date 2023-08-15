@@ -9,7 +9,7 @@ const LoginBanner = () => {
     <main className=" flex flex-1 flex-col justify-between gap-20 max-[975px]:hidden">
       <section className=" flex flex-col gap-12">
         <div
-          className="flex justify-between gap-8 pt-10"
+          className="flex  gap-8 pt-10"
           style={{
             borderBlockStart: "1px dashed rgba(0, 0, 0, 0.16)",
           }}

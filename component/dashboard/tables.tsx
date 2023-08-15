@@ -4,7 +4,7 @@ import { DateInput } from "@mantine/dates";
 import { Button, Flex, Popover, Table } from "@mantine/core";
 import Edit from "../icons/edit";
 import Head from "../icons/head";
-import TableHeader from "@/table-header";
+import TableHeader from "@/component/shared/table-header";
 // import { ArrowDropDown } from "./drop-down";
 // import ActionIcon from "./action-icon";
 // import { data } from "./data-for-table";
@@ -85,7 +85,9 @@ function CustomersListTable() {
         <thead className="dark:text-white">
           <tr className="!rounded-[10px] ">
             {header.map((item, idx) => (
-              <th className="dark:text-white" key={idx}>{item}</th>
+              <th className="dark:text-white" key={idx}>
+                {item}
+              </th>
             ))}
           </tr>
         </thead>

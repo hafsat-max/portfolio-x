@@ -1,16 +1,15 @@
 import { Button, Flex, Popover, Text } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import React, { useState } from "react";
-import Calendar from "./component/icons/calendar";
-import ArrowDown from "./component/icons/arrow-down";
-import BoldArrow from "./component/icons/bold-arrow";
+import Calendar from "../icons/calendar";
+import BoldArrow from "../icons/bold-arrow";
 
 const TableHeader = () => {
   const [value, setValue] = useState<Date | null>(null);
   const [placeholderValue, setPlaceholderValue] = useState("Last Week");
   const test = "Active";
   return (
-    <Flex justify="space-between" align="center" py='22px'>
+    <Flex justify="space-between" align="center" py="22px">
       <Text size="lg" variant="arsenic">
         Customer's Name
       </Text>
@@ -46,7 +45,7 @@ const TableHeader = () => {
                 fontSize: "9.3px",
                 color: "#61677F",
                 fontFamily: "Poppins",
-                borderRadius: '5px'
+                borderRadius: "5px",
               },
             }}
           />
@@ -60,8 +59,8 @@ const TableHeader = () => {
             <Popover.Target>
               <Flex
                 w={85}
-                align='center'
-                gap='10px'
+                align="center"
+                gap="10px"
                 className="!bg-white !px-1 !text-[12px] "
                 styles={{
                   root: {
@@ -77,7 +76,7 @@ const TableHeader = () => {
                 <Text size="xxs" variant="blue-electric" p={0}>
                   {placeholderValue}
                 </Text>
-                  <BoldArrow />
+                <BoldArrow />
               </Flex>
             </Popover.Target>
             <Popover.Dropdown>

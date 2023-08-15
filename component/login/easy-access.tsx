@@ -21,7 +21,7 @@ const EasyAccess = () => {
   return (
     <Flex direction="column" justify="space-between" gap="44px">
       {list.map((item, idx) => (
-        <Flex key={idx} justify="space-between" align="start" gap="40px">
+        <Flex key={idx}  align="start" gap="40px">
           <Box className=" bg-violet dark:bg-[#111c44] p-3 rounded-xl">
             {item.icon}
           </Box>
