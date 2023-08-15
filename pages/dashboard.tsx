@@ -14,7 +14,7 @@ const Dashboard = () => {
         <Flex className="w-full max-[1000px]:flex-col justify-between gap-5">
           <Graph />
 
-          <PieCharts />
+          {/* <PieCharts /> */}
         </Flex>
 
         {/* bottom */}
