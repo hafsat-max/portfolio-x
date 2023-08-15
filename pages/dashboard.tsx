@@ -17,8 +17,7 @@ const Dashboard = () => {
           {/* <PieCharts /> */}
         </Flex>
 
-        {/* bottom */}
-          <Tables />
+        <Tables />
       </Flex>
     </Layout>
   );
