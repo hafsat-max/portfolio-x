@@ -85,6 +85,7 @@ const Form = () => {
           className=" flex flex-col gap-3"
           classNames={{
             input: " p-[20px] bg-white",
+            innerInput: " p-[20px] bg-white",
             wrapper: "border border-solid rounded-[5px]",
           }}
           styles={{

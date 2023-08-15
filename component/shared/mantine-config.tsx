@@ -127,13 +127,6 @@ function MantineConfig({
                 }),
               },
             },
-            Flex: {
-              styles: {
-                sm: {
-                  gap: "8px",
-                },
-              },
-            },
             Button: {
               variants: {
                 default: (
@@ -171,7 +164,6 @@ function MantineConfig({
                 }),
               },
             },
-
             Box: {
               styles: (theme, params, { variant }) => ({
                 header: {

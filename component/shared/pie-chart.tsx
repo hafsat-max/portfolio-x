@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 
 import ApexCharts from "apexcharts";
-import { Box, Flex } from "@mantine/core";
 
 export default function PieCharts() {
   var options = {
@@ -83,14 +82,16 @@ export default function PieCharts() {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    var chart = new ApexCharts(chartRef.current, options);
-    chart.render();
-  }, []);
+    if (chartRef?.current) {
+      var chart = new ApexCharts(chartRef.current, options);
+      chart.render();
+    }
+  }, [chartRef?.current]);
 
   return (
-    <Flex
-      className="bg-white dark:bg-[#111c44] rounded-[14px] !max-h-[299px] !min-h-[299px] flex-1 items-center justify-center"
+    <div
+      className="bg-white dark:bg-[#111c44] rounded-[14px] !max-h-[299px] !min-h-[299px] flex flex-1 items-center justify-center"
       ref={chartRef}
-    ></Flex>
+    />
   );
 }
