@@ -20,6 +20,7 @@ const Header = () => {
         py="22px"
         w="95%"
         mx="auto"
+        gap="30px"
       >
         <Flex justify="space-between" align="center" gap="8rem">
           <Logo />

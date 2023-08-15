@@ -46,6 +46,7 @@ const TableHeader = () => {
                 fontSize: "9.3px",
                 color: "#61677F",
                 fontFamily: "Poppins",
+                borderRadius: '5px'
               },
             }}
           />

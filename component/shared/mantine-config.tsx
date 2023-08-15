@@ -52,7 +52,7 @@ function MantineConfig({
 
             "sonic-silver": { light: "#757575", dark: "#FFFFFF" },
             "blue-electric": { light: "#61677F", dark: "#FFFFFF" },
-
+            'steel': {light: '#1A202C', dark: "#FFFFFF" },
             arsenic: {
               light: "#191635",
               dark: "#FFFFFF",
