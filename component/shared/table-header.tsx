@@ -33,7 +33,7 @@ const TableHeader = () => {
               }
               return new Date(input);
             }}
-            icon={<Calendar />}
+            rightSection={<Calendar />}
             value={value}
             onChange={setValue}
             valueFormat="DD/MM/YYYY"
@@ -61,7 +61,7 @@ const TableHeader = () => {
                 w={85}
                 align="center"
                 gap="10px"
-                className="!bg-white !px-1 !text-[12px] "
+                className="!bg-[#F8F5FF] !px-1 !text-[12px] "
                 styles={{
                   root: {
                     background: "#F8F5FF",
@@ -73,10 +73,15 @@ const TableHeader = () => {
                   },
                 }}
               >
-                <Text size="xxs" variant="blue-electric" p={0}>
+                <Text
+                  size="xxs"
+                  variant="blue-electric"
+                  p={0}
+                  sx={{ whiteSpace: "nowrap" }}
+                >
                   {placeholderValue}
                 </Text>
-                <BoldArrow />
+                <BoldArrow />{" "}
               </Flex>
             </Popover.Target>
             <Popover.Dropdown>

@@ -51,7 +51,7 @@ function MantineConfig({
             "electric-blue": "#596780",
 
             "sonic-silver": { light: "#757575", dark: "#FFFFFF" },
-            "blue-electric": { light: "#61677F", dark: "#FFFFFF" },
+            "blue-electric": { light: "#61677F" },
             'steel': {light: '#1A202C', dark: "#FFFFFF" },
             arsenic: {
               light: "#191635",
@@ -69,7 +69,7 @@ function MantineConfig({
               sizes: {
                 xxs: (theme, params, { variant }) => ({
                   root: {
-                    fontSize: "12px",
+                    fontSize: "clamp(12px,0.75vw,14px)",
                     fontWeight: 500,
                     lineHeight: "16px",
                     color: getColor(theme, variant as string),
@@ -77,7 +77,7 @@ function MantineConfig({
                 }),
                 base: (theme, params, { variant }) => ({
                   root: {
-                    fontSize: "16px",
+                    fontSize: "clamp(14px,1vw,16px)",
                     fontWeight: 600,
                     lineHeight: "24px",
                     letterSpacing: "-2%",
@@ -103,7 +103,7 @@ function MantineConfig({
                 }),
                 lg: (theme, params, { variant }) => ({
                   root: {
-                    fontSize: "24px",
+                    fontSize: "clamp(20px,1.5vw,24px)",
                     fontWeight: 800,
                     lineHeight: "normal",
                     color: getColor(theme, variant as string),

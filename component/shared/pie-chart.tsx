@@ -82,7 +82,7 @@ export default function PieCharts() {
   const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (chartRef?.current) {
+    if (typeof window !== "undefined") {
       var chart = new ApexCharts(chartRef.current, options);
       chart.render();
     }

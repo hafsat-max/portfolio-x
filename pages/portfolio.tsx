@@ -1,9 +1,14 @@
 import { Layout } from "@/component/shared";
+import PieCharts from "@/component/shared/pie-chart";
+import { Box } from "@mantine/core";
 import React from "react";
 
 const Portfolio = () => {
   return <Layout>
-    <h1>Portfolio</h1>
+    <Box bg='white'>
+      {/* <PieCharts/> */}
+      {/* <PieCharts/> */}
+    </Box>
   </Layout>;
 };
 

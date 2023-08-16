@@ -5,14 +5,21 @@ import Link from "next/link";
 import Plus from "../icons/plus";
 import { useRouter } from "next/router";
 
-const Aside = () => {
+const Aside = ({ as }: { as: "drawer" | "sidebar" }) => {
   const { asPath } = useRouter();
   const activeCheck = (link: string) => link === asPath;
   return (
     <Flex
       direction="column"
       justify="space-between"
-      className="bg-white dark:bg-[#111c44] pl-5 pt-5 max-[688px]:hidden"
+      className={clsx(
+        as === "sidebar"
+          ? "max-[688px]:hidden"
+          : as === "drawer"
+          ? "h-full gap-40 p-0"
+          :"",
+        "bg-white dark:bg-[#111c44] pl-5 pt-5 "
+      )}
     >
       {/* top */}
       <Flex direction="column" justify="space-between" gap="40px">
@@ -40,7 +47,7 @@ const Aside = () => {
             component={Flex}
             className=" flex  gap-4 items-center justify-between self-start mx-[18px]"
           >
-            <Flex gap='10px' align='center'>
+            <Flex gap="10px" align="center">
               <Plus />
               <Text size="xxs" variant="primary">
                 Add new Clients

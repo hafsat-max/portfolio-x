@@ -9,16 +9,14 @@ const PieCharts = dynamic(() => import("@/component/shared/pie-chart"), {
 const Dashboard = () => {
   return (
     <Layout>
-      <Flex direction="column" gap="40px" h="100%" w="100%">
-        {/* top */}
-        <Flex className="w-full max-[1000px]:flex-col justify-between gap-5">
-          <Graph />
+      {/* top */}
+      <Flex className="w-full max-[1000px]:flex-col justify-between gap-5">
+        <Graph />
 
-          {/* <PieCharts /> */}
-        </Flex>
-
-        <Tables />
+        <PieCharts />
       </Flex>
+
+      <Tables />
     </Layout>
   );
 };

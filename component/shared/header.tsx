@@ -8,6 +8,7 @@ import ArrowDown from "../icons/arrow-down";
 import { Moon } from "../icons/moon";
 import { useTheme } from "next-themes";
 import { Sun } from "../icons/sun";
+import { Hamburger } from "../icons/hamburger";
 
 const Header = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -42,7 +43,7 @@ const Header = () => {
           />
         </Flex>
 
-        <Flex justify="space-between" align="center" gap="40px">
+        <Flex justify="space-between" align="center" gap="clamp(15px,2.5vw,40px)">
           <Flex align="center" gap="10px" className=" cursor-pointer">
             {colorScheme === "light" ? (
               <Moon
@@ -87,7 +88,9 @@ const Header = () => {
           </Flex>
 
           <NameTag />
-          <ArrowDown />
+          <ArrowDown/>
+          <Hamburger />
+
         </Flex>
       </Flex>
     </Box>
