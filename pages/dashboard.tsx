@@ -1,6 +1,7 @@
 import Graph from "@/component/dashboard/graph";
 import Tables from "@/component/dashboard/tables";
 import { Layout } from "@/component/shared";
+import { DemoPie } from "@/component/shared/donut";
 import { Flex, Table, Text, rem } from "@mantine/core";
 import dynamic from "next/dynamic";
 const PieCharts = dynamic(() => import("@/component/shared/pie-chart"), {
