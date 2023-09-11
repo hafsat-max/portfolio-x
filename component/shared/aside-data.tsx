@@ -11,34 +11,34 @@ import { Moon } from "../icons/moon";
 
 export const AsideData = [
   {
-    icon: <Square/>,
+    icon: <Square />,
     text: "Dashboard",
-    link: '/dashboard'
+    link: "/dashboard",
   },
   {
-    icon: <PortfolioIcon/>,
+    icon: <PortfolioIcon />,
     text: "Portfolio",
-    link: '/portfolio'
+    link: "/portfolio",
   },
   {
-    icon: <IndustriesIcon/>,
+    icon: <IndustriesIcon />,
     text: "Industries",
-    link:'/industries'
+    link: "/industries",
   },
   {
     icon: <CustomersIcon />,
     text: "Customers",
-    link: '/customers'
+    link: "/customers",
   },
   {
-    icon: <MessagesIcon/>,
+    icon: <MessagesIcon />,
     text: "Messages",
-    link: '/messages'
+    link: "/messages",
   },
   {
-    icon:<Calls />,
+    icon: <Calls />,
     text: "Calls",
-    link:'/calls'
+    link: "/calls",
   },
 ];
 
@@ -55,3 +55,16 @@ export const LogoutList = [
   },
 ];
 
+export const details = [
+  { value: 50, color: "black" },
+  { value: 17, color: "#FF9E2C" },
+  { value: 13, color: "#C3FF44" },
+  { value: 20, color: "#FF805D" },
+];
+
+export const detailslist = [
+  { color: "black", text: "Civil Service" },
+  { color: "#FF805D", text: "Service" },
+  { color: "#FF9E2C", text: "Trading" },
+  { color: "#C3FF44", text: "IT" },
+];
