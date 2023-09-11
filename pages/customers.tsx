@@ -8,7 +8,7 @@ const Customers = () => {
     <Layout>
       <Box>
         {data.map((item, idx) => (
-          <Box>
+          <Box key={idx}>
             
           </Box>
         ))}
