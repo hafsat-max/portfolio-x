@@ -1,97 +1,76 @@
-import { useEffect, useRef } from "react";
+import { Pie } from "@ant-design/charts";
+import { Box } from "@mantine/core";
+import React from "react";
 
-import ApexCharts from "apexcharts";
 
-export default function PieCharts() {
-  var options = {
-    chart: {
-      width: "100%",
-      height: "299px",
-      type: "donut",
+type DataType = "new" | "evaluating" | "ongoing" | "finished" | "archived";
+
+interface PieChartData {
+  type: DataType;
+  value: number;
+}
+
+const pieChartData: PieChartData[] = [
+  {
+    type: "new",
+    value: 40,
+  },
+  {
+    type: "evaluating",
+    value: 25,
+  },
+  {
+    type: "ongoing",
+    value: 22,
+  },
+  {
+    type: "finished",
+    value: 22,
+  },
+  {
+    type: "archived",
+    value: 10,
+  },
+];
+
+const config = {
+  appendPadding: 10,
+  data: pieChartData,
+  angleField: "value",
+  colorField: "type",
+  radius: 1,
+  innerRadius: 0.5,
+  label: {
+    type: "inner",
+    offset: "-50%",
+    content: "{value}",
+    style: {
+      textAlign: "center",
+      fontSize: 14,
     },
-    labels: ["Civil Service", "Service", "Trading", "IT"],
-    series: [44, 55, 41, 17],
-    dataLabels: {
-      enabled: false,
-      show: false,
-    },
-    plotOptions: {
-      pie: {
-        expandOnClick: false,
-        startAngle: -90,
-        endAngle: 270,
-        donut: {
-          dataLabels: {
-            show: false,
-          },
-          labels: {
-            show: true,
-            total: {
-              show: true,
-
-              label: "Top 4 Sector",
-
-              fontSize: "14px",
-
-              color: "#596780",
-
-              formatter: function (value: any) {
-                return `$ ${value.globals.seriesTotals.reduce(
-                  (a: any, b: any) => a + b,
-
-                  0
-                )}`;
-              },
-
-              align: "center", // Center align the labels
-
-              offsetX: 0, // Offset in the x-axis (adjust as needed)
-
-              offsetY: 0,
-            },
-          },
-        },
+  },
+  interactions: [{ type: "element-selected" }, { type: "element-active" }],
+  statistic: {
+    title: false as const,
+    content: {
+      style: {
+        whiteSpace: "pre-wrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+      },
+      formatter: function formatter() {
+        return `total\n134`;
       },
     },
-    legend: {
-      formatter: function (
-        val: string,
-        opts: {
-          w: { globals: { series: { [x: string]: string } } };
-          seriesIndex: string | number;
-        }
-      ) {
-        return val;
-      },
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
+  },
+};
 
-  const chartRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      var chart = new ApexCharts(chartRef.current, options);
-      chart.render();
-    }
-  }, [chartRef?.current]);
-
+export function PieChart() {
   return (
-    <div
-      className="bg-white dark:bg-[#111c44] rounded-[14px] !max-h-[299px] !min-h-[299px] flex flex-1 items-center justify-center"
-      ref={chartRef}
-    />
+    <Box className="bg-white dark:bg-[#111c44] rounded-[14px] !max-h-[299px] !min-h-[299px] flex flex-1 items-center justify-center">
+      <Pie {...config} />
+    </Box>
   );
 }
+
+export default PieChart;
