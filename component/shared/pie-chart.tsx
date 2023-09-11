@@ -2,7 +2,6 @@ import { Pie } from "@ant-design/charts";
 import { Box } from "@mantine/core";
 import React from "react";
 
-
 type DataType = "new" | "evaluating" | "ongoing" | "finished" | "archived";
 
 interface PieChartData {
