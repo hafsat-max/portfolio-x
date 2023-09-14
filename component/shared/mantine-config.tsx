@@ -57,6 +57,7 @@ function MantineConfig({
               light: "#191635",
               dark: "#FFFFFF",
             },
+            lintel: "#90A3BF",
             gray: "#7C7C82",
             "dark-gunmetal": "#191635",
             argent: {
@@ -67,6 +68,14 @@ function MantineConfig({
           components: {
             Text: {
               sizes: {
+                xs: (theme, params, { variant }) => ({
+                  root: {
+                    fontSize: "10px",
+                    fontWeight: 500,
+                    lineHeight: "15px",
+                    color: getColor(theme, variant as string),
+                  },
+                }),
                 xxs: (theme, params, { variant }) => ({
                   root: {
                     fontSize: "clamp(12px,0.75vw,14px)",

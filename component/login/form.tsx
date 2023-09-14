@@ -4,7 +4,10 @@ import { Box, Button, Flex, PasswordInput, TextInput } from "@mantine/core";
 import router from "next/router";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
 import "react-toastify/dist/ReactToastify.css";
+import { builder } from "@/api/builder";
+import { cookieStorage } from "@ibnlanre/portal";
 
 interface IValues {
   email: string;
@@ -27,35 +30,24 @@ const Form = () => {
     }),
   });
 
-  const values = form.values;
-
-  const fetchLogin = (value: IValues) => {
-    axios
-      .post("https://web-production-9c5b.up.railway.app/api/account/login/",
-        value,
-      )
-      .then(function (response: { data: { token: any } }) {
-        const token = JSON.parse(localStorage.getItem("my-user") as string);
-
-        if (response.data?.token) {
-          localStorage.setItem("my-user", JSON.stringify(response.data));
-          toast.success("You have successfully logged in", {
-            autoClose: 2000,
-          });
-            router.push("/dashboard");
-        }
-      })
-      .catch((error) => {
-        toast.error("Invalid login credentials or not a verified user", {
-          autoClose: 2000,
-        });
+  const { mutate } = useMutation({
+    mutationFn: async (payload: { email: string; password: string }) =>
+      await builder.use().api.login.sign_in(payload),
+    mutationKey: builder.api.login.sign_in.get(),
+    onSuccess: (data) => {
+      cookieStorage.setItem("my-user", JSON.stringify(data?.data));
+      console.log(data?.data);
+      toast.success("You have successfully logged in", {
+        autoClose: 2000,
       });
-  };
+      router.push("/dashboard");
+    },
+  });
 
   return (
     <form
       onSubmit={form.onSubmit((values) => {
-        fetchLogin(values);
+        mutate(values);
       })}
     >
       <Flex direction="column" justify="space-between" gap="2.5rem">

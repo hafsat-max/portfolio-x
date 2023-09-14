@@ -8,6 +8,7 @@ import Calls from "../icons/calls";
 import Settings from "../icons/settings";
 import Logout from "../icons/logout";
 import { Moon } from "../icons/moon";
+import ArrowDown from "../icons/arrow-down";
 
 export const AsideData = [
   {
@@ -67,4 +68,16 @@ export const detailslist = [
   { color: "#FF805D", text: "Service" },
   { color: "#FF9E2C", text: "Trading" },
   { color: "#C3FF44", text: "IT" },
+];
+
+export const news = [
+  { text: "NASDAQ Daily", paragraph: "Giving you live reports from the..." },
+  { text: "NASDAQ Daily", paragraph: "Giving you live reports from the..." },
+  { text: "NASDAQ Daily", paragraph: "Giving you live reports from the..." },
+];
+
+export const portList = [
+  { text: "Date", icon: <ArrowDown /> },
+  { text: "Amount", icon: <ArrowDown /> },
+  { text: "Status", icon: <ArrowDown /> },
 ];

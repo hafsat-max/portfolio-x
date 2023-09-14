@@ -5,6 +5,8 @@ import { ThemeProvider } from "next-themes";
 import NextApp, { AppContext, AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import { getCookie, setCookie } from "cookies-next";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useState } from "react";
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
@@ -22,16 +24,20 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
       maxAge: 60 * 60 * 24 * 30,
     });
   };
+  const queryClient = new QueryClient();
   return (
-    <ThemeProvider enableSystem={false} attribute="class" enableColorScheme>
-      <MantineConfig
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <ToastContainer />
-        <Component {...pageProps} />
-      </MantineConfig>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider enableSystem={false} attribute="class" enableColorScheme>
+        <MantineConfig
+          colorScheme={colorScheme}
+          toggleColorScheme={toggleColorScheme}
+        >
+          <ToastContainer />
+          <Component {...pageProps} />
+        </MantineConfig>
+      </ThemeProvider>
+      <ReactQueryDevtools/>
+    </QueryClientProvider>
   );
 }
 

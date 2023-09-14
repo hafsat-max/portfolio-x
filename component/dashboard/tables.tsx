@@ -5,10 +5,12 @@ import { Button, Flex, Popover, Table } from "@mantine/core";
 import Edit from "../icons/edit";
 import Head from "../icons/head";
 import TableHeader from "@/component/shared/table-header";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
 // import { ArrowDropDown } from "./drop-down";
 // import ActionIcon from "./action-icon";
 // import { data } from "./data-for-table";
-const data = [
+const dummyData = [
   {
     name: "Akin Fergusion",
     portfolio: "Real Estate",
@@ -73,9 +75,16 @@ function CustomersListTable() {
   const [placeholderValue, setPlaceholderValue] = useState("Last Week");
   const test = "Active";
 
+const {data} = useQuery({
+  queryFn: async (data) => await builder.use().api.client.client_list(),
+  queryKey: builder.api.client.client_list.get(),
+  select: (data) =>data?.data?.data
+})
+console.log(data)
+
   return (
     <div className="p-30 flex-1 flex flex-col rounded-[14px] px-8 dark:bg-[#111c44] pt-22 bg-white mx-30 w-full">
-      <TableHeader />
+      <TableHeader text="Customers List" />
       <Table
         highlightOnHover
         verticalSpacing={16}
@@ -92,7 +101,7 @@ function CustomersListTable() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, idx) => (
+          {dummyData.map((item, idx) => (
             <tr key={idx} className=" hover:!bg-[#F8F5FF]">
               <td>{item.name}</td>
               <td>{item.portfolio}</td>

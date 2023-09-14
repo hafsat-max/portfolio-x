@@ -1,21 +1,21 @@
 import { Button, Flex, Popover, Text } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Calendar from "../icons/calendar";
 import BoldArrow from "../icons/bold-arrow";
 
-const TableHeader = () => {
+const TableHeader = (props:Record<'text',string>) => {
   const [value, setValue] = useState<Date | null>(null);
   const [placeholderValue, setPlaceholderValue] = useState("Last Week");
   const test = "Active";
   return (
-    <Flex justify="space-between" align="center" py="22px">
+    <Flex justify="space-between" align="center" py="22px" w="100%">
       <Text size="lg" variant="arsenic">
-        Customer's Name
+        {props.text}
       </Text>
 
       <Flex align="center" justify="space-between" gap="40px">
-        <Button variant="default">Generate Report</Button>
+        {/* <Button variant="default">Generate Report</Button> */}
 
         <Flex
           justify="space-between"
