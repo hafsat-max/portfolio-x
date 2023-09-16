@@ -15,7 +15,7 @@ const Hr = () => {
         x2="199"
         y2="0.784793"
         stroke="#8F8F8F"
-        stroke-width="0.43038"
+        strokeWidth="0.43038"
         stroke-dasharray="4.3 4.3"
       />
     </svg>

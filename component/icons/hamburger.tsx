@@ -32,6 +32,9 @@ export function Hamburger(props: SVGProps<SVGSVGElement>) {
         size={250}
         withCloseButton={false}
         styles={{ body: { padding: 0 } }}
+        transitionProps={{
+          duration: 0,
+        }}
       >
         <Aside as="drawer" />
       </Drawer>
