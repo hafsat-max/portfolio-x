@@ -3,11 +3,16 @@ import React from "react";
 import { AsideData, LogoutList } from "./aside-data";
 import Link from "next/link";
 import Plus from "../icons/plus";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
+import { useDisclosure } from "@mantine/hooks";
+import path from "path";
 
 const Aside = ({ as }: { as: "drawer" | "sidebar" }) => {
+  const [opened, { open, close }] = useDisclosure(false);
   const { asPath } = useRouter();
   const activeCheck = (link: string) => link === asPath;
+  const NewClient = (link: string) => link === asPath;
+
   return (
     <Flex
       direction="column"
@@ -17,7 +22,7 @@ const Aside = ({ as }: { as: "drawer" | "sidebar" }) => {
           ? "max-[688px]:hidden"
           : as === "drawer"
           ? "h-full gap-40 p-0"
-          :"",
+          : "",
         "bg-white dark:bg-[#111c44] pl-5 pt-5 "
       )}
     >
@@ -45,6 +50,7 @@ const Aside = ({ as }: { as: "drawer" | "sidebar" }) => {
           <Button
             variant="default"
             component={Flex}
+            onClick={()=>router.push('/add-new-client')}
             className=" flex  gap-4 items-center justify-between self-start mx-[18px]"
           >
             <Flex gap="10px" align="center">

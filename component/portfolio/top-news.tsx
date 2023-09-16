@@ -8,18 +8,23 @@ import Hr from "../icons/hr";
 const TopNews = () => {
   return (
     <Flex gap="10px" direction="column">
-      <Box bg="white" p="lg" sx={{borderRadius: '14px 14px 0 0'}}>
+      <Box bg="white" p="lg" sx={{ borderRadius: "14px 14px 0 0" }}>
         <Text size="base" variant="arsenic" align="center">
           Top News
         </Text>
       </Box>
 
-      <Flex direction="column" bg="white" p="lg" sx={{borderRadius: '0 0 14px 14px'}}>
+      <Flex
+        direction="column"
+        bg="white"
+        p="lg"
+        sx={{ borderRadius: "0 0 14px 14px" }}
+      >
         {news.map((item, idx) => (
-          <Flex direction="column" gap="14px" mb='sm'>
-            <Flex key={idx} align="center" gap='8px'>
+          <Flex key={idx} direction="column" gap="14px" mb="sm">
+            <Flex align="center" gap="8px">
               <Dots />
-              <Flex direction="column" justify="space-between" gap='4px'>
+              <Flex direction="column" justify="space-between" gap="4px">
                 <Text variant="black" size="xxs">
                   {item.text}
                 </Text>
