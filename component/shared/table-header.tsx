@@ -4,7 +4,7 @@ import React, { ReactNode, useState } from "react";
 import Calendar from "../icons/calendar";
 import BoldArrow from "../icons/bold-arrow";
 
-const TableHeader = (props:Record<'text',string>) => {
+const TableHeader = (props: Record<"text", string>) => {
   const [value, setValue] = useState<Date | null>(null);
   const [placeholderValue, setPlaceholderValue] = useState("Last Week");
   const test = "Active";
@@ -17,7 +17,7 @@ const TableHeader = (props:Record<'text',string>) => {
       <Flex align="center" justify="space-between" gap="40px">
         {/* <Button variant="default">Generate Report</Button> */}
 
-        <Flex
+          <Flex
           justify="space-between"
           align="center"
           gap="10px"

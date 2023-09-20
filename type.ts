@@ -14,7 +14,6 @@ export interface IClientList {
 export interface IModalProps {
   opened: boolean;
   close: () => void;
-  // onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export interface IValues {
@@ -22,13 +21,18 @@ export interface IValues {
   password: string;
 }
 export interface ICreateClient {
-  client_first_name:string;
-  client_last_name:string;
-  client_gender:string;
-  client_email:string;
-  client_industry:string;
-  client_security_question:string;
-  client_security_answer:string;
-  status:boolean;
-  total_investment:number;
+  client_first_name: string;
+  client_last_name: string;
+  client_gender: string;
+  client_email: string;
+  client_industry: string;
+  client_security_question: string;
+  client_security_answer: string;
+  status?: boolean;
+  total_investment: number;
+}
+
+export interface ICreateIndustry {
+  industry_name: string;
+  industry_description: string;
 }

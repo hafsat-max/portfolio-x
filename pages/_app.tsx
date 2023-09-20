@@ -8,6 +8,7 @@ import { getCookie, setCookie } from "cookies-next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -36,7 +37,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           <Component {...pageProps} />
         </MantineConfig>
       </ThemeProvider>
-      <ReactQueryDevtools/>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }

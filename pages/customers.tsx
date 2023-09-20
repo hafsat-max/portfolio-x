@@ -1,18 +1,27 @@
 import { Layout } from "@/component/shared";
 import { data } from "@/component/shared/customer-data";
-import { Box } from "@mantine/core";
+import { Box, Flex. Text} from "@mantine/core";
+import Image from "next/image";
 import React from "react";
 
+const images = [""];
 const Customers = () => {
   return (
     <Layout>
-      <Box>
+      <Flex>
         {data.map((item, idx) => (
-          <Box key={idx}>
-            
-          </Box>
+          <Flex key={idx} bg="white">
+            <Image
+              width={44}
+              height={44}
+              alt="User image"
+              src="/head-icon.svg"
+            />
+            <Text></Text>
+
+          </Flex>
         ))}
-      </Box>
+      </Flex>
     </Layout>
   );
 };

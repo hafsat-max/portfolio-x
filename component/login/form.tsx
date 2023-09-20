@@ -36,7 +36,6 @@ const Form = () => {
     mutationKey: builder.api.login.sign_in.get(),
     onSuccess: (data) => {
       cookieStorage.setItem("my-user", JSON.stringify(data?.data));
-      console.log(data?.data);
       toast.success("You have successfully logged in", {
         autoClose: 2000,
       });
