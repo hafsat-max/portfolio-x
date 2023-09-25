@@ -76,7 +76,7 @@ function CustomersListTable() {
   const test = "Active";
 
   const { data } = useQuery({
-    queryFn: async (data) => await builder.use().api.client.client_list(),
+    queryFn: async () => await builder.use().api.client.client_list(),
     queryKey: builder.api.client.client_list.get(),
     select: (data) => data?.data?.data,
   });

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Hr = () => {
   return (
@@ -16,10 +16,10 @@ const Hr = () => {
         y2="0.784793"
         stroke="#8F8F8F"
         strokeWidth="0.43038"
-        stroke-dasharray="4.3 4.3"
+        strokeDasharray="4.3 4.3"
       />
     </svg>
   );
-}
+};
 
-export default Hr
+export default Hr;

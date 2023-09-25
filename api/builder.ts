@@ -1,5 +1,5 @@
 import { createBuilder } from "@ibnlanre/portal";
-import { API, AUTHAPI } from "./axios-config";
+import { API, AUTHAPI, PORTFOLIOAPI } from "./axios-config";
 import {
   IClientList,
   ICreateClient,
@@ -31,5 +31,8 @@ export const builder = createBuilder({
         AUTHAPI.post<ILoginResponse>("login/", data),
       refresh: (data: any) => AUTHAPI.post("api/client/login", data),
     },
+  },
+  table: {
+    porfolio: () => PORTFOLIOAPI.get("/portfolio"),
   },
 });

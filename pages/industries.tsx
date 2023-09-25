@@ -6,6 +6,9 @@ import { Button, Flex, Table } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useDisclosure } from "@mantine/hooks";
+import { IndustriesTable } from "@/component/industries/industry-table";
+import { useCustomTable } from "@/component/industries/custom-hook";
+import { columns } from "@/component/industries/industry-data";
 
 const Industries = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -15,6 +18,11 @@ const Industries = () => {
     queryKey: builder.api.client.industry_list.get(),
     select: (data) => data?.data?.data,
   });
+
+  const {table} = useCustomTable({
+    tableData: data,
+    columns: columns
+  })
 
   return (
     <Layout>
@@ -29,27 +37,7 @@ const Industries = () => {
           Add Industry
         </Button>
         <TableTemplate text="Industries List">
-          <Table
-            verticalSpacing="lg"
-            className="border border-collapse text-center"
-          >
-            <thead>
-              <tr>
-                <th className="!text-center">Id</th>
-                <th className="!text-center">Industry Name</th>
-                <th className="!text-center">Industry description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data?.map((item: any) => (
-                <tr key={item?.id}>
-                  <td>{item?.id}</td>
-                  <td>{item?.industry_name}</td>
-                  <td>{item?.industry_description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
+          <IndustriesTable table={table}/>
         </TableTemplate>
       </Flex>
       <AddIndustry opened={opened} close={close} />
@@ -58,3 +46,24 @@ const Industries = () => {
 };
 
 export default Industries;
+
+
+
+  //  <Table verticalSpacing="lg" className="border border-collapse text-center">
+  //    <thead>
+  //      <tr>
+  //        <th className="!text-center">Id</th>
+  //        <th className="!text-center">Industry Name</th>
+  //        <th className="!text-center">Industry description</th>
+  //      </tr>
+  //    </thead>
+  //    <tbody>
+  //      {data?.map((item: any) => (
+  //        <tr key={item?.id}>
+  //          <td>{item?.id}</td>
+  //          <td>{item?.industry_name}</td>
+  //          <td>{item?.industry_description}</td>
+  //        </tr>
+  //      ))}
+  //    </tbody>
+  //  </Table>;

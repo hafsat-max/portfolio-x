@@ -1,4 +1,4 @@
-import PortfolioTable from "@/component/portfolio/portfolio-table";
+import { PortfolioTable } from "@/component/portfolio/portfolio-table";
 import TopNews from "@/component/portfolio/top-news";
 import { Layout } from "@/component/shared";
 import { Piechart } from "@/component/shared/pie-chart";
@@ -18,6 +18,7 @@ const Portfolio = () => {
       </Box>
 
       <Flex>
+        {/* <PortfolioTable /> */}
         <PortfolioTable />
       </Flex>
     </Layout>

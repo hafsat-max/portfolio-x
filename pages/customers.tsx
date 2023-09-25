@@ -1,6 +1,6 @@
 import { Layout } from "@/component/shared";
 import { data } from "@/component/shared/customer-data";
-import { Box, Flex. Text} from "@mantine/core";
+import { Box, Flex, Text} from "@mantine/core";
 import Image from "next/image";
 import React from "react";
 
@@ -27,3 +27,5 @@ const Customers = () => {
 };
 
 export default Customers;
+
+
